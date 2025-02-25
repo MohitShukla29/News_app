@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:news_app/Models/categoryNewsModel.dart';
 import '../Models/newsModel.dart';
@@ -33,7 +34,7 @@ class Newsrepo {
 
   Future<CategoryNews> fetchCategorydetails(String Category) async {
     // Ensure the source name is properly encoded
-    Uri url2 = Uri.parse('https://newsapi.org/v2/everything?q=${Category}&apiKey=2a3192acc09a486198eb02ce29a3d60b');
+    Uri url2 = Uri.parse('https://newsapi.org/v2/everything?q=${Category}&apiKey=${dotenv.env['APIKEY']}');
 
     // Log the URL to ensure it's formatted correctly
     print('Requesting URL: $url2');

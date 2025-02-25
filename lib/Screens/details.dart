@@ -16,6 +16,7 @@ class Details extends StatefulWidget {
   final String newsImage, newstitle, description, publishedAt, newsChannel;
 
   @override
+
   State<Details> createState() => _DetailsState();
 }
 
