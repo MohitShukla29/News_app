@@ -10,7 +10,7 @@ import '../Models/newsModel.dart';
 class Newsrepo {
   Future<Newsdetails> fetchNewsHeadlines(String name) async {
     // Ensure the source name is properly encoded
-    Uri url = Uri.parse('https://newsapi.org/v2/top-headlines?sources=${Uri.encodeComponent(name)}&apiKey=2a3192acc09a486198eb02ce29a3d60b');
+    Uri url = Uri.parse('https://newsapi.org/v2/top-headlines?sources=${Uri.encodeComponent(name)}&apiKey=${dotenv.env['APIKEY']}');
 
     // Log the URL to ensure it's formatted correctly
     print('Requesting URL: $url');
